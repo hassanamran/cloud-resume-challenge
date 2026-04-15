@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hassan Amran - Cloud Resume</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        #header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        #header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        #header h1:nth-child(2) {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        #header h2 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        #header a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        #header a:hover {
+            text-decoration: underline;
+        }
+
+        #skills {
+            margin-top: 40px;
+        }
+
+        #skills h1 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #0066cc;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        #skills h2 {
+            font-size: 1.35rem;
+            margin: 30px 0 12px 0;
+            color: #222;
+        }
+
+        #skills ul {
+            list-style: none;
+        }
+
+        #skills li {
+            padding: 8px 0;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        #skills li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="header">
+            <h1>Hassan Amran</h1>
+            <h1>Cloud and DevOps Engineer</h1>
+            <h2>GitHub: <a href="https://github.com/hassanamran">github.com/hassanamran</a></h2>
+            <p>Hi I'm Hassan, a CS student whos passionate about cloud Infrastructure, and im currently building a serverless application on AWS</p>
+            <p>Total Visitors: <span id="counter">...</span></p>
+        </div>
+
+        <div id="skills">
+            <h1>Skills</h1>
+            
+            <h2>Cloud & Infrastructure:</h2>
+            <ul>
+                <li>AWS Basics (IAM, VPC, EC2, S3, Lambda, DynamoDB, CloudFront)</li>
+                <li>AWS CLI</li>
+            </ul>
+
+            <h2>Programming</h2>
+            <ul>
+                <li>Python (CS50P)</li>
+                <li>Bash</li>
+                <li>Linux</li>
+                <li>Git basics</li>
+                <li>Web Languages (HTML, CSS and JavaScript)</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        fetch('https://v2glvefi31.execute-api.ap-southeast-1.amazonaws.com/Prod/count')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('counter').textContent = data.count;
+            });
+    </script>
+</body>
+</html>
